@@ -8,7 +8,7 @@ export const Chatbot = () => {
   const portfolioData = usePortfolioData();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { type: 'bot', text: `Hi, I'm Rahma's AI Assistant. Ask me anything about her skills, projects, or experience!` }
+    { type: 'bot', text: `Hi, I'm Sondos's AI Assistant. Ask me anything about her skills, projects, or experience!` }
   ]);
   const [input, setInput] = useState('');
   const messagesEndRef = useRef(null);
@@ -30,20 +30,20 @@ export const Chatbot = () => {
 
     // Simple Rule-Based AI Logic
     setTimeout(() => {
-      let botReply = "I'm still learning! But you can check out Rahma's projects, skills, and experience sections or contact her directly.";
+      let botReply = "I'm still learning! But you can check out Sondos's projects, skills, and experience sections or contact her directly.";
 
       if (userMsg.includes('skill') || userMsg.includes('know') || userMsg.includes('tech')) {
-        botReply = `Rahma is highly skilled in: ${portfolioData.allSkills.slice(0, 5).join(', ')} and many more. She specializes in Full Stack Development and DevOps.`;
+        botReply = `Sondos is highly skilled in: ${portfolioData.allSkills.slice(0, 5).join(', ')} and many more. She specializes in Full Stack Development and DevOps.`;
       } else if (userMsg.includes('project') || userMsg.includes('work') || userMsg.includes('portfolio')) {
-        botReply = `Rahma has worked on ${portfolioData.projects.length} amazing projects, including ${portfolioData.projects[0].title} and ${portfolioData.projects[1].title}.`;
+        botReply = `Sondos has worked on ${portfolioData.projects.length} amazing projects, including ${portfolioData.projects[0].title} and ${portfolioData.projects[1].title}.`;
       } else if (userMsg.includes('contact') || userMsg.includes('email') || userMsg.includes('hire')) {
-        botReply = `You can reach Rahma at ${portfolioData.personal.email} or connect with her on LinkedIn!`;
+        botReply = `You can reach Sondos at ${portfolioData.personal.email} or connect with her on LinkedIn!`;
       } else if (userMsg.includes('education') || userMsg.includes('study') || userMsg.includes('degree')) {
-        botReply = `Rahma holds a B.Sc. from Mansoura University and completed an intensive training program in AI-based Software Development at the Digital Pioneers Initiative.`;
+        botReply = `Sondos holds a B.Sc. from Mansoura University and completed an intensive training program in AI-based Software Development at the Digital Pioneers Initiative.`;
       } else if (userMsg.includes('hello') || userMsg.includes('hi ') || userMsg === 'hi') {
-        botReply = `Hello! How can I help you learn more about Rahma's expertise today?`;
-      } else if (userMsg.includes('رحمة') || userMsg.includes('rahma') || userMsg.includes('name')) {
-        botReply = `Rahma is a dedicated Full Stack Developer and DevOps Engineer bridging engineering principles and advanced digital solutions!`;
+        botReply = `Hello! How can I help you learn more about Sondos's expertise today?`;
+      } else if (userMsg.includes('رحمة') || userMsg.includes('Sondos') || userMsg.includes('name')) {
+        botReply = `Sondos is a dedicated Full Stack Developer and DevOps Engineer bridging engineering principles and advanced digital solutions!`;
       }
 
       setMessages(prev => [...prev, { type: 'bot', text: botReply }]);
